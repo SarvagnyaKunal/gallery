@@ -1,0 +1,328 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-42:12
+MERGED from [androidx.activity:activity:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\316d21ba880b0c5b6001413640174946\transformed\activity-1.9.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\a6d26fbcf65140d80f7eef8b7f55a1d9\transformed\activity-ktx-1.9.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\a23cef87f5aeef8046fe1fb54012546d\transformed\material3-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\5fcaa24e7076126e34863393b5eb15cc\transformed\activity-compose-1.9.2\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\22e3cef3006b59b148ae1d6ee2625c30\transformed\material-ripple-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\72c4037f372098c8352ac6f91abc1c43\transformed\foundation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\c86404b89a35284418de5acf26401c01\transformed\animation-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\527bbf0aad0340fef1246ce5d6aab415\transformed\foundation-layout-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\4f6903e38ca0a22bbcc0b05363d08d4b\transformed\animation-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\e81c5b7fa9d49957a7c66c72846a7845\transformed\material-icons-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\9021424a97f1f813bca73cdd71e0cc83\transformed\ui-unit-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\df9b3cd5e8e1f10797a5017ad1dff6fd\transformed\ui-graphics-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\53b07fd891b552aa22461fc627a3dee7\transformed\ui-geometry-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\e830bfaf3484a9779cee548aba46ca65\transformed\ui-util-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\fbd097e1d0aca92d31acd4355fbd13d3\transformed\ui-text-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\b64c452c2482c831550776ddf0f4876b\transformed\ui-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\34a1c91e9e673793124e5da4443544dc\transformed\autofill-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\sarva\.gradle\caches\8.13\transforms\5f9beea3d8e6ef705adac3c740fef73e\transformed\graphics-path-1.0.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\c7226016173f869a88c53625ebf695e1\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\sarva\.gradle\caches\8.13\transforms\b2efa2b78e639b19173cf62e0a00460f\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\sarva\.gradle\caches\8.13\transforms\932fbd67db3807aa20e04b96ccc68e44\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\72266c40dc54675ce7de78a620566da8\transformed\lifecycle-livedata-core-2.8.6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\f9478b9552dea21495d667bcb44ee479\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\745d35906e0543cb66a1c2af855569cb\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\2c0ee4828ca8c5c54abcfb2e5568157f\transformed\lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\3bbefa0d988add3206f3fda9b4f3aa01\transformed\lifecycle-viewmodel-ktx-2.8.6\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\1007a42dd0bad727836647c8bb40f5ec\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\8eb636e4629833edd5a1bfec64c3cfb9\transformed\lifecycle-viewmodel-savedstate-2.8.6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\475b64b86b1e53ee17e0be87d0d574fa\transformed\core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\add433c271f0d0301e621ee870b5781b\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fdeef8efcdaadf5b8a2013fd9aee3e93\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\1c9a4b610f3319143bbc073456c82d2e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\4f45c9589138f859b929a71e0df0ca5a\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.1] C:\Users\sarva\.gradle\caches\8.13\transforms\424ecb3215161fecb6736fb6cd5a5b16\transformed\runtime-saveable-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.1] C:\Users\sarva\.gradle\caches\8.13\transforms\733b8d0e1069084fed05d3f65e50613b\transformed\runtime-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\sarva\.gradle\caches\8.13\transforms\afd6625a60e1195a58b47b38142b0947\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\sarva\.gradle\caches\8.13\transforms\14fcd9b600165ad46e2853ade25ebdde\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:2:1-7:12
+	package
+		INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:6:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:8:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:9:5-87
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:9:22-84
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:12:22-73
+uses-permission#android.permission.READ_MEDIA_VIDEO
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:13:5-75
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:13:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:14:5-16:38
+	android:maxSdkVersion
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:16:9-35
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:15:9-64
+application
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:18:5-41:19
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:18:5-41:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fdeef8efcdaadf5b8a2013fd9aee3e93\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fdeef8efcdaadf5b8a2013fd9aee3e93\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\1c9a4b610f3319143bbc073456c82d2e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\1c9a4b610f3319143bbc073456c82d2e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:23:9-35
+	android:label
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:21:9-41
+	android:icon
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:20:9-43
+	android:allowBackup
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:24:9-45
+	android:networkSecurityConfig
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:22:9-69
+activity#com.laptop.gallery.MainActivity
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:26:9-35:20
+	android:exported
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:28:13-36
+	android:configChanges
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:29:13-74
+	android:theme
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:30:13-49
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:27:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:31:13-34:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:32:17-69
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:32:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:33:17-77
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:33:27-74
+service#com.laptop.gallery.GalleryForegroundService
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:37:9-40:56
+	android:exported
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:39:13-37
+	android:foregroundServiceType
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:40:13-53
+	android:name
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:38:13-53
+uses-sdk
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+MERGED from [androidx.activity:activity:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\316d21ba880b0c5b6001413640174946\transformed\activity-1.9.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\316d21ba880b0c5b6001413640174946\transformed\activity-1.9.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\a6d26fbcf65140d80f7eef8b7f55a1d9\transformed\activity-ktx-1.9.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\a6d26fbcf65140d80f7eef8b7f55a1d9\transformed\activity-ktx-1.9.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\a23cef87f5aeef8046fe1fb54012546d\transformed\material3-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\a23cef87f5aeef8046fe1fb54012546d\transformed\material3-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\5fcaa24e7076126e34863393b5eb15cc\transformed\activity-compose-1.9.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.9.2] C:\Users\sarva\.gradle\caches\8.13\transforms\5fcaa24e7076126e34863393b5eb15cc\transformed\activity-compose-1.9.2\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\22e3cef3006b59b148ae1d6ee2625c30\transformed\material-ripple-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\22e3cef3006b59b148ae1d6ee2625c30\transformed\material-ripple-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\72c4037f372098c8352ac6f91abc1c43\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\72c4037f372098c8352ac6f91abc1c43\transformed\foundation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\c86404b89a35284418de5acf26401c01\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\c86404b89a35284418de5acf26401c01\transformed\animation-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\527bbf0aad0340fef1246ce5d6aab415\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\527bbf0aad0340fef1246ce5d6aab415\transformed\foundation-layout-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\4f6903e38ca0a22bbcc0b05363d08d4b\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\4f6903e38ca0a22bbcc0b05363d08d4b\transformed\animation-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\e81c5b7fa9d49957a7c66c72846a7845\transformed\material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\e81c5b7fa9d49957a7c66c72846a7845\transformed\material-icons-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\9021424a97f1f813bca73cdd71e0cc83\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\9021424a97f1f813bca73cdd71e0cc83\transformed\ui-unit-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\df9b3cd5e8e1f10797a5017ad1dff6fd\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\df9b3cd5e8e1f10797a5017ad1dff6fd\transformed\ui-graphics-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\53b07fd891b552aa22461fc627a3dee7\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\53b07fd891b552aa22461fc627a3dee7\transformed\ui-geometry-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\e830bfaf3484a9779cee548aba46ca65\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\e830bfaf3484a9779cee548aba46ca65\transformed\ui-util-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\fbd097e1d0aca92d31acd4355fbd13d3\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\fbd097e1d0aca92d31acd4355fbd13d3\transformed\ui-text-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\b64c452c2482c831550776ddf0f4876b\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] C:\Users\sarva\.gradle\caches\8.13\transforms\b64c452c2482c831550776ddf0f4876b\transformed\ui-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\34a1c91e9e673793124e5da4443544dc\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\34a1c91e9e673793124e5da4443544dc\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\sarva\.gradle\caches\8.13\transforms\5f9beea3d8e6ef705adac3c740fef73e\transformed\graphics-path-1.0.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] C:\Users\sarva\.gradle\caches\8.13\transforms\5f9beea3d8e6ef705adac3c740fef73e\transformed\graphics-path-1.0.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\c7226016173f869a88c53625ebf695e1\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\c7226016173f869a88c53625ebf695e1\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\sarva\.gradle\caches\8.13\transforms\b2efa2b78e639b19173cf62e0a00460f\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\sarva\.gradle\caches\8.13\transforms\b2efa2b78e639b19173cf62e0a00460f\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\sarva\.gradle\caches\8.13\transforms\932fbd67db3807aa20e04b96ccc68e44\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\sarva\.gradle\caches\8.13\transforms\932fbd67db3807aa20e04b96ccc68e44\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\72266c40dc54675ce7de78a620566da8\transformed\lifecycle-livedata-core-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\72266c40dc54675ce7de78a620566da8\transformed\lifecycle-livedata-core-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\f9478b9552dea21495d667bcb44ee479\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\f9478b9552dea21495d667bcb44ee479\transformed\lifecycle-runtime-compose-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\745d35906e0543cb66a1c2af855569cb\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\745d35906e0543cb66a1c2af855569cb\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\2c0ee4828ca8c5c54abcfb2e5568157f\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\2c0ee4828ca8c5c54abcfb2e5568157f\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\3bbefa0d988add3206f3fda9b4f3aa01\transformed\lifecycle-viewmodel-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\3bbefa0d988add3206f3fda9b4f3aa01\transformed\lifecycle-viewmodel-ktx-2.8.6\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\1007a42dd0bad727836647c8bb40f5ec\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\1007a42dd0bad727836647c8bb40f5ec\transformed\lifecycle-runtime-ktx-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\8eb636e4629833edd5a1bfec64c3cfb9\transformed\lifecycle-viewmodel-savedstate-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\8eb636e4629833edd5a1bfec64c3cfb9\transformed\lifecycle-viewmodel-savedstate-2.8.6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\475b64b86b1e53ee17e0be87d0d574fa\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\475b64b86b1e53ee17e0be87d0d574fa\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\add433c271f0d0301e621ee870b5781b\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\add433c271f0d0301e621ee870b5781b\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fdeef8efcdaadf5b8a2013fd9aee3e93\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fdeef8efcdaadf5b8a2013fd9aee3e93\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\1c9a4b610f3319143bbc073456c82d2e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\1c9a4b610f3319143bbc073456c82d2e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\4f45c9589138f859b929a71e0df0ca5a\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\sarva\.gradle\caches\8.13\transforms\4f45c9589138f859b929a71e0df0ca5a\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.1] C:\Users\sarva\.gradle\caches\8.13\transforms\424ecb3215161fecb6736fb6cd5a5b16\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.1] C:\Users\sarva\.gradle\caches\8.13\transforms\424ecb3215161fecb6736fb6cd5a5b16\transformed\runtime-saveable-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.1] C:\Users\sarva\.gradle\caches\8.13\transforms\733b8d0e1069084fed05d3f65e50613b\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.1] C:\Users\sarva\.gradle\caches\8.13\transforms\733b8d0e1069084fed05d3f65e50613b\transformed\runtime-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\sarva\.gradle\caches\8.13\transforms\afd6625a60e1195a58b47b38142b0947\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\sarva\.gradle\caches\8.13\transforms\afd6625a60e1195a58b47b38142b0947\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\sarva\.gradle\caches\8.13\transforms\14fcd9b600165ad46e2853ade25ebdde\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\sarva\.gradle\caches\8.13\transforms\14fcd9b600165ad46e2853ade25ebdde\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\1c9a4b610f3319143bbc073456c82d2e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\sarva\.gradle\caches\8.13\transforms\1c9a4b610f3319143bbc073456c82d2e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\sarva\.gradle\caches\8.13\transforms\af8ba1979a0665cc248a5baf7898f438\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+permission#com.laptop.gallery.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+uses-permission#com.laptop.gallery.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] C:\Users\sarva\.gradle\caches\8.13\transforms\2a42c98f359bbea5971053acd9a31124\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\sarva\.gradle\caches\8.13\transforms\bfa5cc579600bf99d99a66af40292388\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\sarva\.gradle\caches\8.13\transforms\fd13723bf7e9c6c5a2f13043464bd031\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92

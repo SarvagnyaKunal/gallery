@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- The app hosts a plain-HTTP server on the LAN; allow cleartext. -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

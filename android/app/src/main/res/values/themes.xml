@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base app theme. The Compose UI supplies the real colors; this only styles
+         the splash window and system bars before Compose loads. -->
+    <style name="Theme.Gallery" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#0D0D0F</item>
+        <item name="android:navigationBarColor">#0D0D0F</item>
+        <item name="android:windowBackground">#0D0D0F</item>
+    </style>
+</resources>
