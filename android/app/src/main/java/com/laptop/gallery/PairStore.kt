@@ -5,21 +5,33 @@ import java.security.SecureRandom
 
 /**
  * Holds the current one-time pairing code and the set of approved device tokens.
- * Tokens persist across restarts (SharedPreferences); the OTP lives only for the
- * current sharing session and is regenerated each time sharing starts.
+ * Tokens persist across restarts (SharedPreferences).
+ * The OTP is persisted until devices are unpaired or cleared.
  */
 class PairStore(context: Context) {
 
     private val prefs = context.getSharedPreferences("gallery_pair", Context.MODE_PRIVATE)
     private val rnd = SecureRandom()
 
-    @Volatile var otp: String = ""
-        private set
+    val otp: String
+        get() = getOrCreateOtp()
 
-    /** Generate a fresh 6-digit code for this sharing session. */
+    /** Returns the persisted OTP or generates a fresh 6-digit code if none exists. */
+    fun getOrCreateOtp(): String {
+        val existing = prefs.getString("saved_otp", null)
+        if (!existing.isNullOrEmpty()) {
+            return existing
+        }
+        val newCode = "%06d".format(rnd.nextInt(1_000_000))
+        prefs.edit().putString("saved_otp", newCode).apply()
+        return newCode
+    }
+
+    /** Generate a fresh 6-digit code and save it. */
     fun newOtp(): String {
-        otp = "%06d".format(rnd.nextInt(1_000_000))
-        return otp
+        val newCode = "%06d".format(rnd.nextInt(1_000_000))
+        prefs.edit().putString("saved_otp", newCode).apply()
+        return newCode
     }
 
     /** Approved device tokens (persisted). */
@@ -35,10 +47,13 @@ class PairStore(context: Context) {
         if (token.isNullOrEmpty()) return
         val set = tokens().apply { remove(token) }
         prefs.edit().putStringSet("tokens", set).apply()
+        if (set.isEmpty()) {
+            prefs.edit().remove("saved_otp").apply()
+        }
     }
 
     fun clearAll() {
-        prefs.edit().remove("tokens").apply()
+        prefs.edit().remove("tokens").remove("saved_otp").apply()
     }
 
     /**
@@ -46,7 +61,8 @@ class PairStore(context: Context) {
      * it in the whitelist, and return it. Returns null on mismatch.
      */
     fun redeem(candidateOtp: String?): String? {
-        if (otp.isEmpty() || candidateOtp != otp) return null
+        val currentOtp = getOrCreateOtp()
+        if (currentOtp.isEmpty() || candidateOtp != currentOtp) return null
         val token = randomToken()
         val set = tokens().apply { add(token) }
         prefs.edit().putStringSet("tokens", set).apply()
@@ -59,4 +75,3 @@ class PairStore(context: Context) {
         return bytes.joinToString("") { "%02x".format(it) }
     }
 }
-

@@ -28,21 +28,11 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         super.onMessageReceived(message)
         Log.d("FCM", "From: ${message.from}")
 
-        // Log data payload
-        if (message.data.isNotEmpty()) {
-            Log.d("FCM", "Data payload: ${message.data}")
-            
-            val action = message.data["action"]
-            Log.d("FCM", "Action: $action")
-            if (action == "wake") {
-                showLaptopAccessNotification()
-                GalleryForegroundService.start(applicationContext)
-            }
-        }
-
-        // Log notification payload (optional)
-        message.notification?.let {
-            Log.d("FCM", "Notification Body: ${it.body}")
+        showLaptopAccessNotification()
+        try {
+            GalleryForegroundService.start(applicationContext)
+        } catch (e: Throwable) {
+            Log.e("FCM", "Error starting server from FCM wake", e)
         }
     }
 
@@ -53,7 +43,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 NotificationChannel(
                     LAPTOP_ACCESS_CHANNEL_ID,
                     "Laptop access",
-                    NotificationManager.IMPORTANCE_DEFAULT
+                    NotificationManager.IMPORTANCE_HIGH
                 )
             )
         }
@@ -69,6 +59,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             .setContentTitle("Laptop access")
             .setContentText("Your laptop is requesting gallery access.")
             .setContentIntent(openAppIntent)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .build()
 

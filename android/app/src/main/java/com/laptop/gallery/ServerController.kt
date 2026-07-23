@@ -54,7 +54,7 @@ class ServerController(private val context: Context) {
     fun startServing() {
         if (server != null) return
         error = null
-        otp = pairs.newOtp()
+        otp = pairs.getOrCreateOtp()
         ip = NetUtil.localIp(context)
         try {
             val s = GalleryServer(

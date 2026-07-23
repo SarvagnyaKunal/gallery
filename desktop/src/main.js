@@ -10,7 +10,7 @@ const delay = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 async function startGallerySession() {
     await runLocalWakeSender();
     let lastError;
-    for (let attempt = 0; attempt < 20; attempt += 1) {
+    for (let attempt = 0; attempt < 5; attempt += 1) {
         try {
             await waitForPhoneServer();
             lastError = null;

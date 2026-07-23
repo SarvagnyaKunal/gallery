@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-51:12
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [androidx.compose.material3:material3-android:1.4.0] C:\Users\sarva\.gradle\caches\9.6.1\transforms\dbd861796720aeab1ace26cb317c388f\transformed\material3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] C:\Users\sarva\.gradle\caches\9.6.1\transforms\0ed0e95d89040215774f1ec4ae2d911e\transformed\navigationevent\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] C:\Users\sarva\.gradle\caches\9.6.1\transforms\fbfe82e5d9b12d342327a808a5eafc28\transformed\navigationevent-compose\AndroidManifest.xml:2:1-7:12
@@ -177,8 +177,8 @@ ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\A
 	android:name
 		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:16:9-64
 application
-ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:19:5-50:19
-INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:19:5-50:19
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:19:5-51:19
+INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:19:5-51:19
 MERGED from [com.google.firebase:firebase-messaging:25.1.1] C:\Users\sarva\.gradle\caches\9.6.1\transforms\e117056b1237ec7bbc640cdcc57bd47b\transformed\firebase-messaging-25.1.1\AndroidManifest.xml:28:5-64:19
 MERGED from [com.google.firebase:firebase-messaging:25.1.1] C:\Users\sarva\.gradle\caches\9.6.1\transforms\e117056b1237ec7bbc640cdcc57bd47b\transformed\firebase-messaging-25.1.1\AndroidManifest.xml:28:5-64:19
 MERGED from [com.google.firebase:firebase-analytics:23.2.0] C:\Users\sarva\.gradle\caches\9.6.1\transforms\d80dfcb0efa500bcc4ef94a19b6a61f3\transformed\firebase-analytics-23.2.0\AndroidManifest.xml:7:5-20
@@ -278,17 +278,19 @@ ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\A
 	android:name
 		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:39:13-53
 service#com.laptop.gallery.MyFirebaseMessagingService
-ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:43:9-49:19
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:43:9-50:19
 	android:exported
 		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:45:13-37
+	android:directBootAware
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:46:13-43
 	android:name
 		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:44:13-55
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:46:13-48:29
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:47:13-49:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:47:17-78
+ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:48:17-78
 	android:name
-		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:47:25-75
+		ADDED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml:48:25-75
 uses-sdk
 INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\AndroidManifest.xml

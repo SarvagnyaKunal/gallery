@@ -81,6 +81,7 @@ async function sendWake() {
   }
 
   const projectId = env.FCM_PROJECT_ID || JSON.parse(await readFile(resolve(root, "../android/app/google-services.json"), "utf8")).project_info.project_id;
+  // Data-only high-priority message: Android calls onMessageReceived immediately in background.
   const message = {
     message: {
       token,
@@ -88,7 +89,9 @@ async function sendWake() {
         action: env.FCM_WAKE_ACTION || "wake",
         nonce: createHash("sha256").update(`${Date.now()}:${token}`).digest("hex").slice(0, 16),
       },
-      android: { priority: "HIGH" },
+      android: {
+        priority: "HIGH",
+      },
     },
   };
 

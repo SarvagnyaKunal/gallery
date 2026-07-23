@@ -64,6 +64,7 @@
             android:foregroundServiceType="dataSync" />
         <service
             android:name="com.laptop.gallery.MyFirebaseMessagingService"
+            android:directBootAware="true"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

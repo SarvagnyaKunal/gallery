@@ -1,7 +1,7 @@
 // App shell: connect screen (IP + OTP) → gallery. Remembers device after first pair.
 
 import "./styles.css";
-import { isPaired, pair, forget, sleep, unpair, rememberedAddress, runLocalWakeSender, waitForPhoneServer } from "./api";
+import { isPaired, pair, sleep, unpair, rememberedAddress, runLocalWakeSender, waitForPhoneServer } from "./api";
 import { createGrid, GridView } from "./grid";
 import { createViewer } from "./viewer";
 
@@ -14,7 +14,7 @@ const delay = (ms: number): Promise<void> => new Promise((resolve) => window.set
 async function startGallerySession(): Promise<void> {
   await runLocalWakeSender();
   let lastError: unknown;
-  for (let attempt = 0; attempt < 20; attempt += 1) {
+  for (let attempt = 0; attempt < 4; attempt += 1) {
     try {
       await waitForPhoneServer();
       lastError = null;
@@ -122,10 +122,6 @@ async function renderGallery(): Promise<void> {
   grid = createGrid((photos, index) => viewer.open(photos, index));
   app.appendChild(grid.el);
 }
-
-window.addEventListener("pagehide", () => {
-  sleep();
-});
 
 if (isPaired()) {
   renderFindingPhone();

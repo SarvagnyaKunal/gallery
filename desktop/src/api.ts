@@ -127,7 +127,12 @@ export async function getPage(page: number): Promise<Page> {
 
 export async function waitForPhoneServer(): Promise<void> {
   if (!isPaired()) return;
-  const res = await fetch(`${base}/gallery?page=0&t=${token}`);
+  let res: Response;
+  try {
+    res = await fetch(`${base}/gallery?page=0&t=${token}`);
+  } catch {
+    throw new Error(`Can't reach ${rememberedAddress()}. Is sharing turned on in the phone app?`);
+  }
   if (res.status === 403) { forget(); throw new Error("Device no longer paired"); }
   if (!res.ok) throw new Error("Phone sharing is not available");
   await persistFcmToken((await res.json()).fcmToken);
