@@ -12,7 +12,9 @@ export interface GridView {
 }
 
 function monthLabel(ts: number): string {
-  return new Date(ts).toLocaleDateString("en-US", { year: "numeric", month: "long" });
+  const d = new Date(ts);
+  if (isNaN(d.getTime())) return "Unknown Date";
+  return d.toLocaleDateString("en-US", { year: "numeric", month: "long" });
 }
 
 export function createGrid(onSelect: (photos: Photo[], index: number) => void): GridView {
@@ -36,27 +38,33 @@ export function createGrid(onSelect: (photos: Photo[], index: number) => void): 
   let loading = false;
   let done = false;
   const all: Photo[] = []; // flat, for the viewer
-  let curMonth = "";
-  let curTiles: HTMLElement | null = null; // active month's tile container
+  const monthSections = new Map<string, HTMLElement>();
 
-  // Append photos to the DOM, opening a new month section when the month changes.
+  function getMonthTilesContainer(label: string): HTMLElement {
+    const existing = monthSections.get(label);
+    if (existing) return existing;
+
+    const section = document.createElement("section");
+    section.className = "month";
+
+    const h2 = document.createElement("h2");
+    h2.textContent = label;
+    section.appendChild(h2);
+
+    const tiles = document.createElement("div");
+    tiles.className = "tiles";
+    section.appendChild(tiles);
+
+    scroller.insertBefore(section, sentinel);
+    monthSections.set(label, tiles);
+    return tiles;
+  }
+
+  // Append photos to the DOM, placing each tile in its corresponding month section.
   function append(photos: Photo[]): void {
     for (const p of photos) {
-      const m = monthLabel(p.date);
-      if (m !== curMonth) {
-        curMonth = m;
-        const section = document.createElement("section");
-        section.className = "month";
-
-        const h = document.createElement("h2");
-        h.textContent = m;
-        section.appendChild(h);
-
-        curTiles = document.createElement("div");
-        curTiles.className = "tiles";
-        section.appendChild(curTiles);
-        scroller.insertBefore(section, sentinel);
-      }
+      const label = monthLabel(p.date);
+      const tilesContainer = getMonthTilesContainer(label);
 
       const idx = all.length;
       all.push(p);
@@ -81,7 +89,7 @@ export function createGrid(onSelect: (photos: Photo[], index: number) => void): 
       tile.appendChild(img);
 
       tile.addEventListener("click", () => onSelect(all, idx));
-      curTiles!.appendChild(tile);
+      tilesContainer.appendChild(tile);
     }
   }
 
