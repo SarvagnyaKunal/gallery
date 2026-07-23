@@ -40,9 +40,11 @@ export function createViewer(): Viewer {
     if (p.v) {
       video.src = imageUrl(p);
       video.addEventListener("loadedmetadata", onMediaReady, { once: true });
+      video.addEventListener("error", onMediaError, { once: true });
     } else {
       img.src = imageUrl(p);
       img.addEventListener("load", onMediaReady, { once: true });
+      img.addEventListener("error", onMediaError, { once: true });
     }
     btnPrev.style.visibility = i > 0 ? "visible" : "hidden";
     btnNext.style.visibility = i < list.length - 1 ? "visible" : "hidden";
@@ -55,6 +57,10 @@ export function createViewer(): Viewer {
     else img.classList.remove("hidden");
   }
 
+  function onMediaError(): void {
+    spinner.classList.add("hidden");
+  }
+
   function go(delta: number): void {
     const n = i + delta;
     if (n >= 0 && n < list.length) { i = n; show(); }
@@ -63,6 +69,7 @@ export function createViewer(): Viewer {
   function close(): void {
     overlay.classList.add("hidden");
     img.src = "";
+    video.src = "";
   }
 
   btnClose.addEventListener("click", close);

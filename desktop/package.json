@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "wake": "node scripts/send-fcm-wake.mjs",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

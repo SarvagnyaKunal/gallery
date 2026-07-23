@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">802108048440</string>
+    <string name="google_api_key" translatable="false">AIzaSyB76Zj14kk9VhLixWInox__3fXZYaZtxVY</string>
+    <string name="google_app_id" translatable="false">1:802108048440:android:f19f35ecf807c097e0d2cd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB76Zj14kk9VhLixWInox__3fXZYaZtxVY</string>
+    <string name="google_storage_bucket" translatable="false">laptop-gallery-7028f.firebasestorage.app</string>
+    <string name="project_id" translatable="false">laptop-gallery-7028f</string>
+</resources>

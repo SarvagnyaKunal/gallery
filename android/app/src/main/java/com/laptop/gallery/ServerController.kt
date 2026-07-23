@@ -18,13 +18,14 @@ enum class ServerStatus { STOPPED, WAITING, CONNECTED }
 class ServerController(private val context: Context) {
 
     companion object {
-        const val PORT = 65501
+        val PORT = BuildConfig.GALLERY_SERVER_PORT
         private const val IDLE_MS = 5 * 60 * 1000L         // stop 5 min after last request
         private const val CLIENT_IDLE_MS = 30 * 1000L      // "connected" -> "waiting" after 30s quiet
     }
 
     private val repo = GalleryRepo(context)
     private val pairs = PairStore(context)
+    private val fcmTokens = FcmTokenStore(context)
     private val main = Handler(Looper.getMainLooper())
 
     private var server: GalleryServer? = null
@@ -60,9 +61,22 @@ class ServerController(private val context: Context) {
                 port = PORT,
                 repo = repo,
                 pairs = pairs,
+                fcmTokens = fcmTokens,
                 onActivity = { main.post { onActivity() } },
                 onClientState = { connected -> main.post { if (connected) markConnected() } },
-                onClientSleep = { main.postDelayed({ GalleryForegroundService.stop(context) }, 150) }
+                onClientSleep = {
+                    main.post {
+                        NotificationUtil.showNotification(context, "Laptop Gallery", "laptop gallery disconnected")
+                    }
+                    main.postDelayed({ GalleryForegroundService.stop(context) }, 150)
+                },
+                onClientUnpair = { token ->
+                    main.post {
+                        pairs.unpairToken(token)
+                        NotificationUtil.showNotification(context, "Laptop Gallery", "laptop gallery unpaired")
+                    }
+                    main.postDelayed({ GalleryForegroundService.stop(context) }, 150)
+                }
             )
             s.start(NanoTimeout, false)
             server = s
@@ -80,6 +94,19 @@ class ServerController(private val context: Context) {
     fun stop() {
         GalleryForegroundService.stop(context)
     }
+
+    fun sleepServer() {
+        NotificationUtil.showNotification(context, "Laptop Gallery", "laptop gallery disconnected")
+        stop()
+    }
+
+    fun unpairAll() {
+        pairs.clearAll()
+        NotificationUtil.showNotification(context, "Laptop Gallery", "laptop gallery unpaired")
+        stop()
+    }
+
+    fun hasPairedDevices(): Boolean = pairs.hasPairedTokens()
 
     fun stopServing() {
         cancel(idleStop); cancel(clientIdle)

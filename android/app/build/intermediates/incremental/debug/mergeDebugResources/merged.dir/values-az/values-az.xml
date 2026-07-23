@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="8719607706653693137" name="androidx_compose_foundation_autofill">"Avto-doldurma"</string>
+    <string msgid="1150566100598813236" name="androidx_compose_ui_autofill">"Avto-doldurma"</string>
     <string msgid="881409763997275156" name="call_notification_answer_action">"Cavab verin"</string>
     <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Video"</string>
     <string msgid="3229508546291798546" name="call_notification_decline_action">"İmtina edin"</string>
@@ -9,6 +11,24 @@
     <string msgid="59049573811482460" name="call_notification_screening_text">"Gələn zəng göstərilir"</string>
     <string msgid="406453423630273620" name="close_drawer">"Naviqasiya menyusunu bağlayın"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Səhifəni bağlayın"</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Aktiv edin</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s Google Play xidmətlərini aktiv edənə kimi işləməyəcək.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play xidmətlərini aktiv edin</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Quraşdırın</string>
+    <string name="common_google_play_services_install_text">%1$s cihazınızda mövcud olmayan Google Play xidmətləri olmadan çalışmayacaq.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Google Play xidmətlərini əldə edin</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play xidmətlərinin əlçatanlığı</string>
+    <string name="common_google_play_services_notification_ticker">Google Play xidmətləri xətası</string>
+    <string name="common_google_play_services_unknown_issue">%1$s tətbiqi ilə Google Play xidmətləri arasında problem var. Daha sonra yenidən cəhd edin.</string>
+    <string name="common_google_play_services_unsupported_text">Cihazınız tərəfindən dəstəklənməyən Google Play xidmətləri olmadan %1$s tətbiqi işləməyəcək.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Güncəlləyin</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text">%1$s Google Play xidmətləri yeniləmə halda çalışmaz.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Google Play xidmətlərini güncəlləşdirin</string>
+    <string name="common_google_play_services_updating_text">%1$s hal-hazırda güncəllənən Google Play xidmətləri olmadan çalışmayacaq.</string>
+    <string name="common_google_play_services_wear_update_text">Google Play xidmətlərinin yeni versiyası lazımdır. Qısa müddətə özünü yeniləyəcək.</string>
+    <string name="common_open_on_phone">Telefonda açın</string>
+    <string name="common_signin_button_text">Daxil olun</string>
+    <string name="common_signin_button_text_long">Google ilə daxil olun</string>
     <string msgid="8038256446254964252" name="default_error_message">"Yanlış daxiletmə"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Popap Pəncərəsi"</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Aşağı açılan menyu"</string>
@@ -54,10 +74,15 @@
     <string msgid="3177828188723359358" name="m3c_dropdown_menu_collapsed">"Yığcamlaşdırılıb"</string>
     <string msgid="2360841780724299882" name="m3c_dropdown_menu_expanded">"Genişləndirilb"</string>
     <string msgid="8687821690726149911" name="m3c_dropdown_menu_toggle">"Aşağı açılan menyunu aktiv/deaktiv edin"</string>
+    <string msgid="6072492480528318635" name="m3c_floating_toolbar_collapse">"Alətlər panelini yığcamlaşdırın"</string>
+    <string msgid="6880757017246780255" name="m3c_floating_toolbar_expand">"Alətlər panelini genişləndirin"</string>
     <string msgid="6152806324422087846" name="m3c_search_bar_search">"Axtarış"</string>
     <string msgid="6152755701819882931" name="m3c_snackbar_dismiss">"Rədd edin"</string>
+    <string msgid="3868801555855510515" name="m3c_snackbar_pane_title">"Xəbərdarlıq"</string>
     <string msgid="7655536806087401899" name="m3c_suggestions_available">"Təkliflər aşağıdadır"</string>
+    <string msgid="409352516511718051" name="m3c_time_input_dialog_title">"Vaxt daxil edin"</string>
     <string msgid="2786685010796619560" name="m3c_time_picker_am">"AM"</string>
+    <string msgid="7412665527536641863" name="m3c_time_picker_dialog_title">"Vaxt seçin"</string>
     <string msgid="2349193472625211372" name="m3c_time_picker_hour">"Saat"</string>
     <string msgid="9179527532316922345" name="m3c_time_picker_hour_24h_suffix">"%1$d saat"</string>
     <string msgid="8876759303332837035" name="m3c_time_picker_hour_selection">"Saat seçin"</string>
@@ -69,20 +94,25 @@
     <string msgid="7661234488295443182" name="m3c_time_picker_minute_text_field">"dəqiqəlik"</string>
     <string msgid="5865171949528594571" name="m3c_time_picker_period_toggle_description">"AM və ya PM seçin"</string>
     <string msgid="6616362054113087709" name="m3c_time_picker_pm">"PM"</string>
+    <string msgid="4145073906612931838" name="m3c_time_picker_toggle_keyboard">"Vaxtı daxil etmək üçün mətn daxiletmə rejiminə keçin"</string>
+    <string msgid="8841786098195101324" name="m3c_time_picker_toggle_touch">"Vaxtı daxil etmək üçün saat rejiminə keçin"</string>
     <string msgid="1805687647081129904" name="m3c_tooltip_long_press_label">"Alət izahını göstərin"</string>
     <string msgid="5460405025248574620" name="m3c_tooltip_pane_description">"Alət izahı"</string>
+    <string msgid="6564222473543418073" name="m3c_wide_navigation_rail_close_rail">"Relsi bağlayın"</string>
+    <string msgid="8350283435461615411" name="m3c_wide_navigation_rail_pane_title">"Naviqasiya relsi"</string>
     <string msgid="542007171693138492" name="navigation_menu">"Naviqasiya menyusu"</string>
     <string msgid="6610465462668679431" name="not_selected">"Seçilməyib"</string>
     <string msgid="5941395253238309765" name="range_end">"Sıranın sonu"</string>
     <string msgid="7097486360902471446" name="range_start">"Sıranın başlanğıcı"</string>
     <string msgid="6043586758067023" name="selected">"Seçilib"</string>
+    <string msgid="2792228137354697160" name="snackbar_pane_title">"Xəbərdarlıq"</string>
     <string msgid="4139871816613051306" name="state_empty">"Boş"</string>
     <string msgid="5834637030682409883" name="state_off">"Deaktiv"</string>
     <string msgid="1490883874751719580" name="state_on">"Aktiv"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string msgid="2561197295334830845" name="switch_role">"Dəyişdirin"</string>
     <string msgid="1672349317127674378" name="tab">"Tab"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> faiz."</string>
+    <string msgid="5946805113151406391" name="template_percent">"<xliff:g id="PERCENTAGE">%1$d</xliff:g> faiz."</string>
     <string msgid="3765533235322692011" name="tooltip_description">"alət izahı"</string>
     <string msgid="3124740595719787496" name="tooltip_label">"alət izahını göstərin"</string>
 </resources>

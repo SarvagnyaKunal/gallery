@@ -7,9 +7,13 @@ import android.os.Build
 import android.provider.MediaStore
 import android.util.Size
 import java.io.ByteArrayOutputStream
+import java.io.InputStream
 
 /** Photo or video metadata sent to clients. */
 data class Media(val id: Long, val date: Long, val w: Int, val h: Int, val isVideo: Boolean = false)
+
+/** Stream container for full-resolution media. */
+data class MediaStream(val stream: InputStream, val size: Long, val mimeType: String)
 
 /**
  * Reads images and videos from MediaStore, newest first. Paginated so we never
@@ -98,19 +102,33 @@ class GalleryRepo(private val context: Context) {
                 bmp.recycle()
                 bos.toByteArray()
             }
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
             null
         }
     }
 
-    /** Full-resolution original bytes for one image/video, or null if unavailable. */
-    fun original(id: Long, isVideo: Boolean): ByteArray? {
+    /** Full-resolution original stream for one image/video, or null if unavailable. */
+    fun openOriginal(id: Long, isVideo: Boolean): MediaStream? {
         val collection = if (isVideo) videoCollection else imageCollection
         val uri = ContentUris.withAppendedId(collection, id)
+        val mimeType = context.contentResolver.getType(uri) ?: if (isVideo) "video/mp4" else "image/jpeg"
         return try {
-            context.contentResolver.openInputStream(uri)?.use { it.readBytes() }
-        } catch (e: Exception) {
-            null
+            val pfd = context.contentResolver.openFileDescriptor(uri, "r")
+            if (pfd != null) {
+                val size = pfd.statSize
+                val stream = java.io.FileInputStream(pfd.fileDescriptor)
+                MediaStream(stream, size, mimeType)
+            } else {
+                val stream = context.contentResolver.openInputStream(uri) ?: return null
+                MediaStream(stream, -1L, mimeType)
+            }
+        } catch (e: Throwable) {
+            try {
+                val stream = context.contentResolver.openInputStream(uri) ?: return null
+                MediaStream(stream, -1L, mimeType)
+            } catch (ex: Throwable) {
+                null
+            }
         }
     }
 }

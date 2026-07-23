@@ -1,0 +1,3 @@
+- `[x]` Upgrade Kotlin plugins in root `build.gradle.kts`
+- `[x]` Upgrade Compose BoM and other dependencies in `app/build.gradle.kts`
+- `[/]` Run Gradle Sync and build project to verify fix

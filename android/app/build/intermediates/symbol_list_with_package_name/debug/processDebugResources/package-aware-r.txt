@@ -1,5 +1,8 @@
 com.laptop.gallery
 attr alpha
+attr buttonSize
+attr circleCrop
+attr colorScheme
 attr font
 attr fontProviderAuthority
 attr fontProviderCerts
@@ -11,15 +14,29 @@ attr fontProviderSystemFontFamily
 attr fontStyle
 attr fontVariationSettings
 attr fontWeight
+attr imageAspectRatio
+attr imageAspectRatioAdjust
 attr lStar
 attr nestedScrollViewStyle
 attr queryPatterns
+attr scopeUris
 attr shortcutMatchRequired
 attr ttcIndex
 color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
 color call_notification_answer_color
 color call_notification_decline_color
+color common_google_signin_btn_text_dark
+color common_google_signin_btn_text_dark_default
+color common_google_signin_btn_text_dark_disabled
+color common_google_signin_btn_text_dark_focused
+color common_google_signin_btn_text_dark_pressed
+color common_google_signin_btn_text_light
+color common_google_signin_btn_text_light_default
+color common_google_signin_btn_text_light_disabled
+color common_google_signin_btn_text_light_focused
+color common_google_signin_btn_text_light_pressed
+color common_google_signin_btn_tint
 color notification_action_color_filter
 color notification_icon_bg_color
 color vector_tint_color
@@ -46,6 +63,27 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable common_full_open_on_phone
+drawable common_google_signin_btn_icon_dark
+drawable common_google_signin_btn_icon_dark_focused
+drawable common_google_signin_btn_icon_dark_normal
+drawable common_google_signin_btn_icon_dark_normal_background
+drawable common_google_signin_btn_icon_disabled
+drawable common_google_signin_btn_icon_light
+drawable common_google_signin_btn_icon_light_focused
+drawable common_google_signin_btn_icon_light_normal
+drawable common_google_signin_btn_icon_light_normal_background
+drawable common_google_signin_btn_text_dark
+drawable common_google_signin_btn_text_dark_focused
+drawable common_google_signin_btn_text_dark_normal
+drawable common_google_signin_btn_text_dark_normal_background
+drawable common_google_signin_btn_text_disabled
+drawable common_google_signin_btn_text_light
+drawable common_google_signin_btn_text_light_focused
+drawable common_google_signin_btn_text_light_normal
+drawable common_google_signin_btn_text_light_normal_background
+drawable googleg_disabled_color_18
+drawable googleg_standard_color_18
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -105,12 +143,16 @@ id action_divider
 id action_image
 id action_text
 id actions
+id adjust_height
+id adjust_width
 id androidx_compose_ui_view_composition_context
 id async
+id auto
 id blocking
 id chronometer
 id compose_view_saveable_id_tag
 id consume_window_insets_tag
+id dark
 id dialog_button
 id edit_text_id
 id forever
@@ -119,12 +161,15 @@ id hide_ime_id
 id hide_in_inspector_tag
 id icon
 id icon_group
+id icon_only
 id info
 id inspection_slot_table_set
 id is_pooling_container_tag
 id italic
+id light
 id line1
 id line3
+id none
 id normal
 id notification_background
 id notification_main_column
@@ -133,6 +178,7 @@ id pooling_container_listener_holder_tag
 id report_drawn
 id right_icon
 id right_side
+id standard
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -154,7 +200,9 @@ id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
+id wide
 id wrapped_composition_tag
+integer google_play_services_version
 integer m3c_window_layout_in_display_cutout_mode
 integer status_bar_notification_info_maxnum
 layout custom_dialog
@@ -167,6 +215,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 mipmap ic_launcher
+raw firebase_common_keep
 string androidx_startup
 string app_name
 string call_notification_answer_action
@@ -178,9 +227,32 @@ string call_notification_ongoing_text
 string call_notification_screening_text
 string close_drawer
 string close_sheet
+string common_google_play_services_enable_button
+string common_google_play_services_enable_text
+string common_google_play_services_enable_title
+string common_google_play_services_install_button
+string common_google_play_services_install_text
+string common_google_play_services_install_title
+string common_google_play_services_notification_channel_name
+string common_google_play_services_notification_ticker
+string common_google_play_services_unknown_issue
+string common_google_play_services_unsupported_text
+string common_google_play_services_update_button
+string common_google_play_services_update_text
+string common_google_play_services_update_title
+string common_google_play_services_updating_text
+string common_google_play_services_wear_update_text
+string common_open_on_phone
+string common_signin_button_text
+string common_signin_button_text_long
 string default_error_message
 string default_popup_window_title
 string dropdown_menu
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string in_progress
 string indeterminate
 string m3c_bottom_sheet_collapse_description
@@ -242,6 +314,7 @@ string m3c_tooltip_long_press_label
 string m3c_tooltip_pane_description
 string navigation_menu
 string not_selected
+string project_id
 string range_end
 string range_start
 string selected
@@ -273,4 +346,6 @@ styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchSt
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable SignInButton buttonSize colorScheme scopeUris
 xml network_security_config

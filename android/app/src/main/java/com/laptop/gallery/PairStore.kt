@@ -29,6 +29,18 @@ class PairStore(context: Context) {
     fun isApproved(token: String?): Boolean =
         !token.isNullOrEmpty() && tokens().contains(token)
 
+    fun hasPairedTokens(): Boolean = tokens().isNotEmpty()
+
+    fun unpairToken(token: String?) {
+        if (token.isNullOrEmpty()) return
+        val set = tokens().apply { remove(token) }
+        prefs.edit().putStringSet("tokens", set).apply()
+    }
+
+    fun clearAll() {
+        prefs.edit().remove("tokens").apply()
+    }
+
     /**
      * Validate a client-supplied OTP. On match, mint a new device token, store
      * it in the whitelist, and return it. Returns null on mismatch.
@@ -47,3 +59,4 @@ class PairStore(context: Context) {
         return bytes.joinToString("") { "%02x".format(it) }
     }
 }
+

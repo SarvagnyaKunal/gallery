@@ -4,9 +4,11 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import com.google.firebase.messaging.FirebaseMessaging
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -55,6 +57,10 @@ class MainActivity : ComponentActivity() {
         if (hasPermission.value) loadCount()
     }
 
+    private val requestNotificationPermission = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         controller = GalleryAppState.controller(applicationContext)
@@ -66,6 +72,23 @@ class MainActivity : ComponentActivity() {
 
         hasPermission.value = perms.all { checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED }
         if (hasPermission.value) loadCount() else requestPermission.launch(perms)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+            checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+        ) {
+            requestNotificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
+
+        @Suppress("DEPRECATION")
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("FCM", "Fetching FCM registration token failed", task.exception)
+                return@addOnCompleteListener
+            }
+            val token = task.result
+            FcmTokenStore(applicationContext).set(token)
+            Log.d("FCM", "Current token: $token")
+        }
 
         setContent {
             GalleryTheme {
@@ -134,19 +157,51 @@ private fun HomeScreen(
                 Text("Grant access")
             }
         } else {
-            Button(
-                onClick = { controller.toggle() },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = if (status == ServerStatus.STOPPED) accent else Color(0xFF2C2C32)
-                ),
-                shape = RoundedCornerShape(12.dp),
-                modifier = Modifier.fillMaxWidth().height(52.dp)
-            ) {
-                Text(
-                    if (status == ServerStatus.STOPPED) "Start Sharing" else "Stop Sharing",
-                    fontSize = 16.sp, fontWeight = FontWeight.Medium
-                )
+            if (status != ServerStatus.STOPPED) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Button(
+                        onClick = { controller.sleepServer() },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2C2C32)),
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.weight(1f).height(52.dp)
+                    ) {
+                        Text("Sleep", fontSize = 16.sp, fontWeight = FontWeight.Medium)
+                    }
+                    Button(
+                        onClick = { controller.unpairAll() },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF7F1D1D)),
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.weight(1f).height(52.dp)
+                    ) {
+                        Text("Unpair", fontSize = 16.sp, fontWeight = FontWeight.Medium, color = Color(0xFFFCA5A5))
+                    }
+                }
+            } else {
+                Button(
+                    onClick = { controller.start() },
+                    colors = ButtonDefaults.buttonColors(containerColor = accent),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth().height(52.dp)
+                ) {
+                    Text("Start Sharing", fontSize = 16.sp, fontWeight = FontWeight.Medium)
+                }
+
+                if (controller.hasPairedDevices()) {
+                    Spacer(Modifier.height(12.dp))
+                    Button(
+                        onClick = { controller.unpairAll() },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2C2C32)),
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.fillMaxWidth().height(44.dp)
+                    ) {
+                        Text("Unpair Paired Devices", fontSize = 14.sp, color = Color(0xFFF87171))
+                    }
+                }
             }
+
             controller.error?.let { msg ->
                 Spacer(Modifier.height(14.dp))
                 Text(msg, color = Color(0xFFF87171), fontSize = 13.sp, textAlign = TextAlign.Center)

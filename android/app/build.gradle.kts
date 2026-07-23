@@ -1,6 +1,5 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     // Apply Google services plugin so google-services.json is processed
     id("com.google.gms.google-services")
@@ -8,14 +7,15 @@ plugins {
 
 android {
     namespace = "com.laptop.gallery"
-    compileSdk = 34
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.laptop.gallery"
         minSdk = 29          // Android 10: MediaStore.loadThumbnail + scoped storage
-        targetSdk = 34
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
+        buildConfigField("int", "GALLERY_SERVER_PORT", "65501")
     }
 
     buildTypes {
@@ -32,13 +32,22 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions { jvmTarget = "17" }
 
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
 }
 
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2024.09.00")
+    val composeBom = platform("androidx.compose:compose-bom:2026.06.01")
     implementation(composeBom)
 
     // Firebase BoM - ensures compatible Firebase library versions
@@ -46,10 +55,11 @@ dependencies {
 
     // Example Firebase product: Analytics (no explicit version when using BoM)
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-messaging")
 
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.activity:activity-compose:1.9.2")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
+    implementation("androidx.core:core-ktx:1.19.0")
+    implementation("androidx.activity:activity-compose:1.13.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.11.0")
 
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")

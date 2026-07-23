@@ -6,13 +6,13 @@ import java.io.InputStream
 
 /**
  * LAN HTTP server exposing the gallery. Endpoints:
- *   GET /pair?otp=NNNNNN      -> {"token":"..."}            (200) or 403
+ *   GET /pair?otp=NNNNNN      -> {"token":"...","fcmToken":"..."} (200) or 403
  *   GET /gallery?page=N&t=TOK -> {"total":N,"items":[...]}  (needs token)
  *   GET /thumb/{id}?t=TOK     -> image/jpeg                 (needs token)
  *   GET /image/{id}?t=TOK     -> image or video file        (needs token)
  *
- *   GET /wake?t=TOK          -> keep service alive             (needs token)
  *   GET /sleep?t=TOK         -> stop service after response    (needs token)
+ *   GET /unpair?t=TOK        -> unpair client                  (needs token)
  *
  * Every authorized request resets a 5-minute idle timer via [onActivity].
  */
@@ -20,9 +20,11 @@ class GalleryServer(
     port: Int,
     private val repo: GalleryRepo,
     private val pairs: PairStore,
+    private val fcmTokens: FcmTokenStore,
     private val onActivity: () -> Unit,
     private val onClientState: (connected: Boolean) -> Unit,
-    private val onClientSleep: () -> Unit
+    private val onClientSleep: () -> Unit,
+    private val onClientUnpair: (token: String?) -> Unit
 ) : NanoHTTPD("0.0.0.0", port) {
 
     companion object {
@@ -43,7 +45,7 @@ class GalleryServer(
             val token = pairs.redeem(otp)
             return if (token != null) {
                 onActivity()
-                cors(json("""{"token":"$token"}"""))
+                cors(json("""{"token":"$token","fcmToken":${jsonString(fcmTokens.get())}}"""))
             } else {
                 cors(newFixedLengthResponse(Response.Status.FORBIDDEN, JSON, """{"error":"bad otp"}"""))
             }
@@ -62,11 +64,12 @@ class GalleryServer(
                 val page = q["page"]?.firstOrNull()?.toIntOrNull()?.coerceAtLeast(0) ?: 0
                 cors(json(galleryJson(page)))
             }
-            uri == "/wake" -> {
-                cors(json("""{"ok":true}"""))
-            }
             uri == "/sleep" -> {
                 onClientSleep()
+                cors(json("""{"ok":true}"""))
+            }
+            uri == "/unpair" -> {
+                onClientUnpair(token)
                 cors(json("""{"ok":true}"""))
             }
             uri.startsWith("/thumb/") -> {
@@ -78,14 +81,15 @@ class GalleryServer(
             uri.startsWith("/image/") -> {
                 val parts = uri.removePrefix("/image/").split("?")
                 val (id, isVideo) = parseIdIsVideo(parts[0])
-                val bytes = id?.let { repo.original(it, isVideo ?: false) }
-                if (isVideo == true && bytes != null) {
-                    // Video: serve as-is with appropriate mime type (assume mp4).
-                    cors(newFixedLengthResponse(Response.Status.OK, "video/mp4",
-                        ByteArrayInputStream(bytes), bytes.size.toLong()))
-                } else if (bytes != null) {
-                    // Image: JPEG.
-                    cors(image(bytes))
+                val media = id?.let { repo.openOriginal(it, isVideo ?: false) }
+                if (media != null) {
+                    val r = if (media.size >= 0) {
+                        newFixedLengthResponse(Response.Status.OK, media.mimeType, media.stream, media.size)
+                    } else {
+                        newChunkedResponse(Response.Status.OK, media.mimeType, media.stream)
+                    }
+                    r.addHeader("Cache-Control", "max-age=86400")
+                    cors(r)
                 } else {
                     notFound()
                 }
@@ -105,7 +109,7 @@ class GalleryServer(
             arr.append("""{"id":${m.id},"date":${m.date},"w":${m.w},"h":${m.h},"v":${m.isVideo}}""")
         }
         arr.append(']')
-        return """{"total":$total,"items":$arr}"""
+        return """{"total":$total,"items":$arr,"fcmToken":${jsonString(fcmTokens.get())}}"""
     }
 
     private fun parseIdIsVideo(s: String): Pair<Long?, Boolean?> {
@@ -116,6 +120,11 @@ class GalleryServer(
     }
 
     private fun json(body: String) = newFixedLengthResponse(Response.Status.OK, JSON, body)
+
+    private fun jsonString(value: String?): String =
+        if (value == null) "null" else "\"" + value
+            .replace("\\", "\\\\")
+            .replace("\"", "\\\"") + "\""
 
     private fun image(bytes: ByteArray): Response {
         val r = newFixedLengthResponse(

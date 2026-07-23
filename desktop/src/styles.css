@@ -77,8 +77,30 @@ button {
   z-index: 5;
 }
 .topbar .title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
-.topbar #disconnect { color: var(--muted); font-size: 13px; }
-.topbar #disconnect:hover { color: var(--text); }
+.topbar .actions { display: flex; align-items: center; gap: 10px; }
+
+.connect-btns { display: flex; gap: 10px; }
+.connect-btns button { flex: 1; }
+
+.btn-disconnect {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--surface);
+  transition: color 0.15s, background-color 0.15s;
+}
+.btn-disconnect:hover { color: var(--text); background: #2a2a30; }
+
+.btn-unpair {
+  color: #f87171;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(248, 113, 113, 0.1);
+  transition: background-color 0.15s;
+}
+.btn-unpair:hover { background: rgba(248, 113, 113, 0.2); }
 
 /* ---------- Grid ---------- */
 .grid-root { flex: 1 1 auto; min-height: 0; }

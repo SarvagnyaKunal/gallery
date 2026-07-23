@@ -32,10 +32,12 @@ export function createViewer() {
         if (p.v) {
             video.src = imageUrl(p);
             video.addEventListener("loadedmetadata", onMediaReady, { once: true });
+            video.addEventListener("error", onMediaError, { once: true });
         }
         else {
             img.src = imageUrl(p);
             img.addEventListener("load", onMediaReady, { once: true });
+            img.addEventListener("error", onMediaError, { once: true });
         }
         btnPrev.style.visibility = i > 0 ? "visible" : "hidden";
         btnNext.style.visibility = i < list.length - 1 ? "visible" : "hidden";
@@ -48,6 +50,9 @@ export function createViewer() {
         else
             img.classList.remove("hidden");
     }
+    function onMediaError() {
+        spinner.classList.add("hidden");
+    }
     function go(delta) {
         const n = i + delta;
         if (n >= 0 && n < list.length) {
@@ -58,6 +63,7 @@ export function createViewer() {
     function close() {
         overlay.classList.add("hidden");
         img.src = "";
+        video.src = "";
     }
     btnClose.addEventListener("click", close);
     btnPrev.addEventListener("click", () => go(-1));

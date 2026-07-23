@@ -1,0 +1,9 @@
+com.laptop.gallery.app-pngs-0 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\build\generated\res\pngs\debug
+com.laptop.gallery.app-res-1 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\build\generated\res\processDebugGoogleServices
+com.laptop.gallery.app-updated_navigation_xml-2 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\build\generated\updated_navigation_xml\debug
+com.laptop.gallery.app-packageDebugResources-3 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.laptop.gallery.app-packageDebugResources-4 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.laptop.gallery.app-debug-5 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.laptop.gallery.app-debug-6 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\debug\res
+com.laptop.gallery.app-main-7 C:\Users\sarva\Desktop\nf\code\Lphotos\gallery\android\app\src\main\res
+gradleHome-0 C:\Users\sarva\.gradle

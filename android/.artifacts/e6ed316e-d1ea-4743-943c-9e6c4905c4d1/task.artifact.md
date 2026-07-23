@@ -1,7 +1,0 @@
-- [x] Downgrade AGP and Gradle versions
-    - [x] Update `build.gradle.kts` (root)
-    - [x] Update `gradle-wrapper.properties`
-- [x] Sync Gradle
-- [x] Build the app (`assembleDebug`)
-- [ ] Deploy and Run the app (Waiting for device)
-- [ ] Deploy and Run the app
