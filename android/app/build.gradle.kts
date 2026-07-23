@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
+    // Apply Google services plugin so google-services.json is processed
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -38,6 +40,12 @@ android {
 dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2024.09.00")
     implementation(composeBom)
+
+    // Firebase BoM - ensures compatible Firebase library versions
+    implementation(platform("com.google.firebase:firebase-bom:34.16.0"))
+
+    // Example Firebase product: Analytics (no explicit version when using BoM)
+    implementation("com.google.firebase:firebase-analytics")
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.activity:activity-compose:1.9.2")

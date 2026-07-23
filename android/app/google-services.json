@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "802108048440",
+    "project_id": "laptop-gallery-7028f",
+    "storage_bucket": "laptop-gallery-7028f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802108048440:android:f19f35ecf807c097e0d2cd",
+        "android_client_info": {
+          "package_name": "com.laptop.gallery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB76Zj14kk9VhLixWInox__3fXZYaZtxVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
