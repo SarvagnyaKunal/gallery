@@ -1,9 +1,11 @@
 package com.laptop.gallery
 
+import android.content.ContentResolver
 import android.content.ContentUris
 import android.content.Context
 import android.graphics.Bitmap
 import android.os.Build
+import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Size
 import java.io.ByteArrayOutputStream
@@ -16,79 +18,126 @@ data class Media(val id: Long, val date: Long, val w: Int, val h: Int, val isVid
 data class MediaStream(val stream: InputStream, val size: Long, val mimeType: String)
 
 /**
- * Reads images and videos from MediaStore, newest first. Paginated so we never
- * load the whole gallery at once. Thumbnails and full media are streamed on demand.
- * Videos are served as-is (original container); thumbnails are extracted JPEG frames.
+ * Reads images and videos across all storage locations (Camera, Screenshots, Downloads,
+ * WhatsApp, SD Card, etc.) using MediaStore.Files. Strictly sorted chronologically by
+ * Date / Month / Year (newest first).
  */
 class GalleryRepo(private val context: Context) {
 
+    private val filesCollection = MediaStore.Files.getContentUri("external")
     private val imageCollection = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
     private val videoCollection = MediaStore.Video.Media.EXTERNAL_CONTENT_URI
 
     private val projection = arrayOf(
-        MediaStore.Images.Media._ID,
-        MediaStore.Images.Media.DATE_TAKEN,
-        MediaStore.Images.Media.DATE_ADDED,
-        MediaStore.Images.Media.WIDTH,
-        MediaStore.Images.Media.HEIGHT
+        MediaStore.Files.FileColumns._ID,
+        MediaStore.Files.FileColumns.DATE_TAKEN,
+        MediaStore.Files.FileColumns.DATE_MODIFIED,
+        MediaStore.Files.FileColumns.DATE_ADDED,
+        MediaStore.Files.FileColumns.WIDTH,
+        MediaStore.Files.FileColumns.HEIGHT,
+        MediaStore.Files.FileColumns.MEDIA_TYPE
     )
 
-    /** Total number of images + videos — for the client's scroll sizing. */
+    private val selection = "${MediaStore.Files.FileColumns.MEDIA_TYPE} = ? OR ${MediaStore.Files.FileColumns.MEDIA_TYPE} = ?"
+    private val selectionArgs = arrayOf(
+        MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE.toString(),
+        MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO.toString()
+    )
+
+    // Compute effective timestamp in ms so sorting places latest photos (e.g. 2026) first
+    private val sortOrderSql = "(CASE WHEN ${MediaStore.Files.FileColumns.DATE_TAKEN} IS NOT NULL AND ${MediaStore.Files.FileColumns.DATE_TAKEN} > 0 THEN ${MediaStore.Files.FileColumns.DATE_TAKEN} WHEN ${MediaStore.Files.FileColumns.DATE_MODIFIED} IS NOT NULL AND ${MediaStore.Files.FileColumns.DATE_MODIFIED} > 0 THEN ${MediaStore.Files.FileColumns.DATE_MODIFIED} * 1000 ELSE ${MediaStore.Files.FileColumns.DATE_ADDED} * 1000 END) DESC, ${MediaStore.Files.FileColumns._ID} DESC"
+
+    /** Total number of images + videos across all indexed storage folders. */
     fun count(): Int {
-        var c = 0
-        context.contentResolver.query(imageCollection, arrayOf(MediaStore.Images.Media._ID),
-            null, null, null)?.use { c += it.count }
-        context.contentResolver.query(videoCollection, arrayOf(MediaStore.Video.Media._ID),
-            null, null, null)?.use { c += it.count }
-        return c
+        return try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                val args = Bundle().apply {
+                    putString(ContentResolver.QUERY_ARG_SQL_SELECTION, selection)
+                    putStringArray(ContentResolver.QUERY_ARG_SQL_SELECTION_ARGS, selectionArgs)
+                }
+                context.contentResolver.query(filesCollection, arrayOf(MediaStore.Files.FileColumns._ID), args, null)
+            } else {
+                context.contentResolver.query(filesCollection, arrayOf(MediaStore.Files.FileColumns._ID), selection, selectionArgs, null)
+            }?.use { it.count } ?: 0
+        } catch (e: Throwable) {
+            0
+        }
     }
 
-    /** One page of media (images + videos), sorted by capture date (newest first). */
+    /** One page of media (images + videos), sorted chronologically by date/month/year (newest first). */
     fun page(offset: Int, limit: Int): List<Media> {
-        val all = mutableListOf<Media>()
+        val out = ArrayList<Media>(limit)
 
-        // Fetch images
-        queryCollection(imageCollection, isVideo = false)?.let { all.addAll(it) }
-        // Fetch videos
-        queryCollection(videoCollection, isVideo = true)?.let { all.addAll(it) }
+        try {
+            val cursor = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                val args = Bundle().apply {
+                    putString(ContentResolver.QUERY_ARG_SQL_SELECTION, selection)
+                    putStringArray(ContentResolver.QUERY_ARG_SQL_SELECTION_ARGS, selectionArgs)
+                    putString(ContentResolver.QUERY_ARG_SQL_SORT_ORDER, sortOrderSql)
+                    putInt(ContentResolver.QUERY_ARG_LIMIT, limit)
+                    putInt(ContentResolver.QUERY_ARG_OFFSET, offset)
+                }
+                context.contentResolver.query(filesCollection, projection, args, null)
+            } else {
+                context.contentResolver.query(
+                    filesCollection,
+                    projection,
+                    selection,
+                    selectionArgs,
+                    "$sortOrderSql LIMIT $limit OFFSET $offset"
+                )
+            }
 
-        // Sort all by date descending, then take the page.
-        all.sortByDescending { it.date }
-        return all.drop(offset).take(limit)
+            cursor?.use { c ->
+                val idCol = c.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID)
+                val takenCol = c.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_TAKEN)
+                val modifiedCol = c.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_MODIFIED)
+                val addedCol = c.getColumnIndexOrThrow(MediaStore.Files.FileColumns.DATE_ADDED)
+                val wCol = c.getColumnIndexOrThrow(MediaStore.Files.FileColumns.WIDTH)
+                val hCol = c.getColumnIndexOrThrow(MediaStore.Files.FileColumns.HEIGHT)
+                val typeCol = c.getColumnIndexOrThrow(MediaStore.Files.FileColumns.MEDIA_TYPE)
+
+                while (c.moveToNext()) {
+                    val id = c.getLong(idCol)
+                    val taken = c.getLong(takenCol)
+                    val modified = c.getLong(modifiedCol)
+                    val added = c.getLong(addedCol)
+                    val date = resolveTimestamp(taken, modified, added)
+                    val w = c.getInt(wCol)
+                    val h = c.getInt(hCol)
+                    val mediaType = c.getInt(typeCol)
+                    val isVideo = mediaType == MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO
+
+                    out.add(Media(id, date, w, h, isVideo))
+                }
+            }
+        } catch (e: Throwable) {
+            // Surface empty list gracefully on query error
+        }
+
+        return out
     }
 
-    private fun queryCollection(collection: android.net.Uri, isVideo: Boolean): List<Media>? {
-        val out = ArrayList<Media>(300)
-        val sort = "${MediaStore.Images.Media.DATE_TAKEN} DESC, ${MediaStore.Images.Media._ID} DESC"
-
-        val cursor = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val args = android.os.Bundle().apply {
-                putStringArray(android.content.ContentResolver.QUERY_ARG_SORT_COLUMNS,
-                    arrayOf(MediaStore.Images.Media.DATE_TAKEN, MediaStore.Images.Media._ID))
-                putInt(android.content.ContentResolver.QUERY_ARG_SORT_DIRECTION,
-                    android.content.ContentResolver.QUERY_SORT_DIRECTION_DESCENDING)
-                putInt(android.content.ContentResolver.QUERY_ARG_LIMIT, 300)
-                putInt(android.content.ContentResolver.QUERY_ARG_OFFSET, 0)
-            }
-            context.contentResolver.query(collection, projection, args, null)
-        } else {
-            context.contentResolver.query(collection, projection, null, null,
-                "$sort LIMIT 300 OFFSET 0")
+    /**
+     * Resolves the actual capture or file creation timestamp in milliseconds.
+     * Safely normalizes values given in seconds (e.g. DATE_MODIFIED/DATE_ADDED) vs milliseconds (DATE_TAKEN).
+     * Prefers DATE_TAKEN (EXIF), then DATE_MODIFIED (original file timestamp), then DATE_ADDED.
+     */
+    private fun resolveTimestamp(taken: Long, modified: Long, added: Long): Long {
+        fun toMs(v: Long): Long {
+            if (v <= 0L) return 0L
+            return if (v < 10_000_000_000L) v * 1000L else v
         }
+        val t = toMs(taken)
+        val m = toMs(modified)
+        val a = toMs(added)
 
-        cursor?.use { c ->
-            val idCol = c.getColumnIndexOrThrow(MediaStore.Images.Media._ID)
-            val takenCol = c.getColumnIndexOrThrow(MediaStore.Images.Media.DATE_TAKEN)
-            val addedCol = c.getColumnIndexOrThrow(MediaStore.Images.Media.DATE_ADDED)
-            val wCol = c.getColumnIndexOrThrow(MediaStore.Images.Media.WIDTH)
-            val hCol = c.getColumnIndexOrThrow(MediaStore.Images.Media.HEIGHT)
-            while (c.moveToNext()) {
-                val taken = c.getLong(takenCol)
-                val date = if (taken > 0) taken else c.getLong(addedCol) * 1000L
-                out.add(Media(c.getLong(idCol), date, c.getInt(wCol), c.getInt(hCol), isVideo))
-            }
+        return when {
+            t > 0L -> t
+            m > 0L -> m
+            a > 0L -> a
+            else -> System.currentTimeMillis()
         }
-        return out
     }
 
     /** JPEG thumbnail bytes for one image/video (256px), or null if unavailable. */

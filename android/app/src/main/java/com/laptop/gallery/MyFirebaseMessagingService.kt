@@ -21,18 +21,18 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         FcmTokenStore(applicationContext).set(token)
-        Log.d("FCM", "New token: $token")
+        Log.d("FCM", "New registration token: $token")
     }
 
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
-        Log.d("FCM", "From: ${message.from}")
+        Log.d("FCM", "Wake push received from: ${message.from}")
 
         showLaptopAccessNotification()
         try {
             GalleryForegroundService.start(applicationContext)
         } catch (e: Throwable) {
-            Log.e("FCM", "Error starting server from FCM wake", e)
+            Log.e("FCM", "Error restarting server from FCM wake", e)
         }
     }
 
@@ -56,8 +56,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         )
         val notification = NotificationCompat.Builder(this, LAPTOP_ACCESS_CHANNEL_ID)
             .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentTitle("Laptop access")
-            .setContentText("Your laptop is requesting gallery access.")
+            .setContentTitle("Laptop Gallery")
+            .setContentText("Laptop requested gallery access. Server restarted.")
             .setContentIntent(openAppIntent)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
